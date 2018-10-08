@@ -24,7 +24,7 @@ public class ArrayListDemo{
 
         arrayList2.remove(4);
 
-        arrayList2.clear();
+        // arrayList2.clear();
         for(int i=0; i < arrayList2.size(); i++) {
             System.out.println(arrayList2.get(i));
         }

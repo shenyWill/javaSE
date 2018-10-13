@@ -1,6 +1,6 @@
 package cn.yuanwill.innerClass;
 /*
- * 成员位置内部类，可以使用成员修饰符，public static ...
+ * 锟斤拷员位锟斤拷锟节诧拷锟洁，锟斤拷锟斤拷使锟矫筹拷员锟斤拷锟轿凤拷锟斤拷public static 
  */
 public class Outer {
 	private int a = 1;

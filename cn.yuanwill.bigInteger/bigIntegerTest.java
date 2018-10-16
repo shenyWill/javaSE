@@ -19,6 +19,12 @@ public class bigIntegerTest {
 		
 		BigInteger bi3 = bi2.subtract(bi1);
 		System.out.println(bi3);
+		
+		BigInteger bi4 = bi.multiply(bi1);
+		System.out.println(bi4);
+		
+		BigInteger bi5 = bi3.divide(bi1);
+		System.out.println(bi5);
 	}
 
 }

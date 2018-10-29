@@ -7,6 +7,9 @@ public class Person implements Serializable{
 	private int age;
 	// transient作用是阻止序列号
 	private transient String email;
+	
+	// 序列号除了private 其他的不可以改
+	private static final long serialVersionUID = 42L;
 
 	
 	public Person() {

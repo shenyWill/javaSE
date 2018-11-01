@@ -7,8 +7,20 @@ public class SubThread extends Thread {
 		
 		super.run();
 		for (int i = 0; i < 99; i++) {
-				System.out.println("run...." + i);
+				System.out.println("run...." + getName() + ".." + i);
 		}
 	}
+
+	public SubThread(String arg0) {
+		super(arg0);
+		
+	}
+
+	public SubThread() {
+		super();
+		
+	}
+	
+	
 	
 }

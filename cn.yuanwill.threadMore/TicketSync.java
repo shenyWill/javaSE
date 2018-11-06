@@ -17,7 +17,7 @@ public class TicketSync implements Runnable {
 					
 					e.printStackTrace();
 				}
-				System.out.println(Thread.currentThread().getName() + "...." + ticketNum--);
+				System.out.println(Thread.currentThread().getName() + " ...." + ticketNum--);
 			}
 		}
 		

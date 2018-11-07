@@ -18,5 +18,14 @@ SELECT * FROM student WHERE umoney > 6000 AND umoney < 10000
 -- between的条件查询
 SELECT * FROM student WHERE umoney BETWEEN 6000 AND 10000
 
--- 查询金额是3500 4500 5500 其中一个
+-- in 查询金额是3500 4500 5500 其中一个
 SELECT * FROM student WHERE umoney in (3500,4500,5500)
+
+-- like 模糊查询
+SELECT * FROM student WHERE uname LIKE '%s%'
+
+-- _查询五个字符的
+SELECT * FROM student WHERE uname like '____'
+
+-- 查询不为空的
+SELECT * FROM student WHERE umoney IS NOT NULL

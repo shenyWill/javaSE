@@ -35,3 +35,15 @@ SELECT * FROM student ORDER BY umoney
 
 -- 降序排列
 SELECT * FROM student ORDER BY umoney DESC
+
+-- count 求和 对表中的数据的个数求和
+SELECT COUNT(*) AS 'count' FROM student
+
+-- sum 对一列中的数据求和计算
+SELECT SUM(umoney) as 'total' FROM student
+
+-- 获取最大值
+SELECT MAX(umoney) from student
+
+-- 获取平均值
+SELECT AVG(umoney) from student

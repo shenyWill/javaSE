@@ -29,3 +29,9 @@ SELECT * FROM student WHERE uname like '____'
 
 -- 查询不为空的
 SELECT * FROM student WHERE umoney IS NOT NULL
+
+-- 升序排列
+SELECT * FROM student ORDER BY umoney
+
+-- 降序排列
+SELECT * FROM student ORDER BY umoney DESC

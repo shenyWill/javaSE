@@ -47,3 +47,6 @@ SELECT MAX(umoney) from student
 
 -- 获取平均值
 SELECT AVG(umoney) from student
+
+-- GROUP BY分组查询
+SELECT SUM(umoney), uname FROM student GROUP BY uname

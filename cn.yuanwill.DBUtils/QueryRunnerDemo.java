@@ -2,10 +2,14 @@ package cn.yuanwill.DBUtils;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ArrayHandler;
+import org.apache.commons.dbutils.handlers.ArrayListHandler;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import cn.yuanwill.JDBC.JDBCUtilsConfig;
 
@@ -13,7 +17,7 @@ public class QueryRunnerDemo {
 	private static QueryRunner qr =  new QueryRunner();
 	private static Connection con = JDBCUtilsConfig.getConnection();
 	public static void main(String[] args) throws SQLException {
-		select();
+		beanListHandler();
 		DbUtils.closeQuietly(con);
 	}
 	
@@ -40,7 +44,7 @@ public class QueryRunnerDemo {
 		System.out.println(row);
 	}
 	
-	// 查询数组中的数据
+	// 1.查询数组中的数据
 	public static void select() throws SQLException{
 		String sql = "select * from student";
 		Object[] obj = qr.query(con, sql, new ArrayHandler());
@@ -48,5 +52,36 @@ public class QueryRunnerDemo {
 			System.out.print(object + "\t");
 		}
 	}
+	
+	// 2.查询数组中的数据 listHandler
+	public static void arraylistHandler() throws SQLException{
+		String sql = "select * from student";
+		List<Object[]> result = qr.query(con, sql, new ArrayListHandler());
+		for (Object[] objects : result) {
+			for (Object object : objects) {
+				System.out.print(object+ "\t");
+			}
+			System.out.println();
+		}
+	}
+	
+	// 3.查询数组中的数据到student对象--第一行
+	public static void beanHandler() throws SQLException{
+		String sql = "select * from student";
+		Student s = qr.query(con, sql, new BeanHandler<Student>(Student.class));
+		System.out.println(s);
+	}
+	
+	// 4.查询数组中的数据到student对象--每一行
+	public static void beanListHandler() throws SQLException{
+		String sql = "select * from student";
+		List<Student> studentList = qr.query(con, sql, new BeanListHandler<Student>(Student.class));
+		for (Student student : studentList) {
+			System.out.println(student);
+		}
+	}
+
+	
+	
 
 }
